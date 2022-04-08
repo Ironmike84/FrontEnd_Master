@@ -1,0 +1,22 @@
+{
+  "name": "muvies-app",
+  "version": "1.0.0",
+  "description": "Does it Work",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Mike Gross",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.26.1",
+    "react": "^18.0.0",
+    "react-bootstrap": "^2.2.2",
+    "react-router-dom": "^6.3.0"
+  },
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.4.1",
+    "parcel": "^2.4.1",
+    "process": "^0.11.10"
+  }
+}

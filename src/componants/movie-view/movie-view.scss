@@ -1,0 +1,145 @@
+//MOVIE View
+
+.movie-view{
+    color: bisque;
+    font-family: 'Dongle', sans-serif;
+    font-size: 18pt;
+    line-height: 12px;
+    background-color: 'rgba(0, 0, 0, 0.17)';
+    width: 400px;
+    margin: 6px;
+    padding: 7px;
+    border-radius: 14px;
+    border: 3px solid rgb(185, 182, 182, 0.2);
+    box-shadow: 1px 1px 3px black,
+                2px 2px 3px black,
+                3px 3px 6px rgba(0, 0, 0, 0.788),
+            inset 1px 1px 3px black,
+            inset 1px 2px 3px black,
+            inset 3px 3px 4px black,
+            inset -1px -1px 3px black,
+            inset -1px -2px 3px black,
+            inset -3px -3px 4px black,
+            rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}
+.movie-title{
+    color:bisque;
+    margin-top: 5px;
+    padding: 7px;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+    background-color: black;
+}
+.movie-description{
+    line-height: 16px;
+    color: rgb(245, 245, 245);
+    background-color: 'rgba(0, 0, 0, 0.17)';
+    border-bottom-right-radius: 7px;
+    border-bottom-left-radius: 7px;
+    padding: 7px;
+    margin-bottom: 7px;
+    box-shadow:inset 1px 1px 3px black,
+inset 1px 2px 3px black,
+inset 3px 3px 4px black;
+}
+.Categorical{
+    padding: 6px;
+    margin-top: 7px;
+    margin-bottom: 10px;
+    border: 1px inset rgb(0, 0, 0);
+    border-radius: 14px;
+    box-shadow: 1px 1px 2px black,
+                2px 2px 3px black,
+                3px 3px 4px black;
+    
+}
+.details{
+    padding: 7px;
+    margin-top: 7px;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+    background-color: rgb(7, 7, 7);
+    border: 1px inset rgb(0, 0, 0);
+}
+.movie-genre{
+    padding: 5px;
+    border: 1px dotted silver;
+}
+.movie-rating{
+    padding: 5px;
+    border: 1px dotted silver;
+}
+.movie-director{
+    padding: 5px;
+    border: 1px dotted silver;
+}
+.Actors{
+    padding: 6px;
+    margin-top: 7px;
+    margin-bottom: 10px;
+    border-radius: 7px;
+    border: 1px inset rgb(0, 0, 0);
+    box-shadow: 1px 1px 2px black,
+                2px 2px 3px black,
+                3px 3px 4px black;
+}
+.Actors-Title{
+    padding: 7px;
+    margin-top: 7px;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+    background-color: rgb(7, 7, 7);
+    border: 1px inset rgb(0, 0, 0);
+}
+.Star-Actor{
+    padding: 5px;
+    border: 1px dotted silver;
+}
+.Supporting-Actor{
+    padding: 5px;
+    border: 1px dotted silver;
+}
+.Cast{
+    padding: 5px;
+    border: 1px dotted silver;
+}
+.label{
+    padding: 5px;
+    color: goldenrod;
+}
+.value{
+    padding: 5px;
+    color: bisque;
+}
+.btn.btn-link{
+
+    font-family: 'Nunito', sans-serif;
+    text-decoration: none;
+    box-shadow: 1px 1px 2px rgb(0, 0, 0),
+    2px 2px 3px rgb(19, 18, 18);
+    transition: 1s ease-in-out;
+  }
+  
+  .btn.btn-link:hover{
+    color: red;
+    font-family: 'Nunito', sans-serif;
+    text-decoration: none;
+    box-shadow: 1px 1px 2px rgb(0, 0, 0),
+    2px 2px 3px rgb(19, 18, 18);
+    transition: 1s ease-in-out;
+  }
+  
+  
+  .btn{
+    font-family: 'Nunito', sans-serif;  
+    box-shadow: 1px 1px 2px rgb(0, 0, 0),
+    2px 2px 3px rgb(19, 18, 18);
+    transition: 1s ease-in-out;
+  }
+  .btn:hover{
+    box-shadow: 1px 1px 2px rgb(0, 0, 0),
+                2px 2px 3px rgb(0, 0, 0),
+                3px 3px 4px rgba(0, 0, 0, 0.5);
+                transition: .5s ease-in-out;
+  }
+  

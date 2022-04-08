@@ -1,0 +1,16 @@
+//MAIN View
+
+body{
+    color: bisque;
+    background: linear-gradient(to left, rgb(36, 35, 35) 10%, rgb(107, 106, 106) 45%, rgb(26, 25, 25) 75%);
+}
+
+
+img{
+    margin-left: 10%;
+    height: 375px;
+    width: 275px;
+    border-radius: 14px;
+    box-shadow: 1px 1px 3px black,
+                2px 2px 3px black;
+}

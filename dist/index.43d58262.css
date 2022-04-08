@@ -1,0 +1,238 @@
+.login-container {
+  width: 150px;
+  height: fit-content;
+  background: linear-gradient(to left, #1d1d1d 10%, #1a1919 45%, #0a0a0a 75%);
+  border: 1px solid #b40000;
+  border-radius: 14px;
+  margin-left: 50px;
+  padding: 7px;
+  font-family: Dongle, sans-serif;
+  box-shadow: 1px 1px 3px #000, 2px 2px 3px #000, 3px 3px 4px #0f0f0fce;
+}
+
+input {
+  width: 150px;
+  color: #7fff00;
+  text-align: center;
+  background-color: #161515;
+  border: 0 inset #000;
+  border-radius: 14px;
+  font-family: Dongle, sans-serif;
+  font-size: 14pt;
+  box-shadow: inset 1px 1px 3px #000, inset 2px 2px 3px #000, inset 3px 3px 4px #0f0f0fce;
+}
+
+.danger {
+  cursor: pointer;
+  color: #7fff00;
+  width: 75px;
+  background-color: #0e0d0d;
+  border: 0 outset silver;
+  border-radius: 14px;
+  margin-top: 7px;
+  margin-left: 40%;
+  font-family: Dongle, sans-serif;
+  box-shadow: 1px 1px 3px #000, 2px 2px 3px #000, 3px 3px 4px #0f0f0fce;
+}
+
+form {
+  height: 300px;
+  width: 250px;
+  background: linear-gradient(to left, #1d1d1d 10%, #1a1919 45%, #0a0a0a 75%);
+  border: 1px outset #bebebe;
+  border-radius: 15px;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 50px;
+  margin-left: 40%;
+  padding: 15px;
+  display: flex;
+  box-shadow: 1px 1px 3px #000, 2px 2px 3px #000, 3px 3px 6px #000;
+}
+
+.log-out {
+  margin: 10px;
+}
+
+.movie-view {
+  color: bisque;
+  background-color: "rgba(0, 0, 0, 0.17)";
+  width: 400px;
+  border: 3px solid #b9b6b633;
+  border-radius: 14px;
+  margin: 6px;
+  padding: 7px;
+  font-family: Dongle, sans-serif;
+  font-size: 18pt;
+  line-height: 12px;
+  box-shadow: 1px 1px 3px #000, 2px 2px 3px #000, 3px 3px 6px #000000c9, inset 1px 1px 3px #000, inset 1px 2px 3px #000, inset 3px 3px 4px #000, inset -1px -1px 3px #000, inset -1px -2px 3px #000, inset -3px -3px 4px #000, inset 0 -23px 25px #0000002b, inset 0 -36px 30px #00000026, inset 0 -79px 40px #0000001a, 0 2px 1px #0000000f, 0 4px 2px #00000017, 0 8px 4px #00000017, 0 16px 8px #00000017, 0 32px 16px #00000017;
+}
+
+.movie-title {
+  color: bisque;
+  background-color: #000;
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
+  margin-top: 5px;
+  padding: 7px;
+}
+
+.movie-description {
+  color: #f5f5f5;
+  background-color: "rgba(0, 0, 0, 0.17)";
+  border-bottom-left-radius: 7px;
+  border-bottom-right-radius: 7px;
+  margin-bottom: 7px;
+  padding: 7px;
+  line-height: 16px;
+  box-shadow: inset 1px 1px 3px #000, inset 1px 2px 3px #000, inset 3px 3px 4px #000;
+}
+
+.Categorical {
+  border: 1px inset #000;
+  border-radius: 14px;
+  margin-top: 7px;
+  margin-bottom: 10px;
+  padding: 6px;
+  box-shadow: 1px 1px 2px #000, 2px 2px 3px #000, 3px 3px 4px #000;
+}
+
+.details {
+  background-color: #070707;
+  border: 1px inset #000;
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
+  margin-top: 7px;
+  padding: 7px;
+}
+
+.movie-genre, .movie-rating, .movie-director {
+  border: 1px dotted silver;
+  padding: 5px;
+}
+
+.Actors {
+  border: 1px inset #000;
+  border-radius: 7px;
+  margin-top: 7px;
+  margin-bottom: 10px;
+  padding: 6px;
+  box-shadow: 1px 1px 2px #000, 2px 2px 3px #000, 3px 3px 4px #000;
+}
+
+.Actors-Title {
+  background-color: #070707;
+  border: 1px inset #000;
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
+  margin-top: 7px;
+  padding: 7px;
+}
+
+.Star-Actor, .Supporting-Actor, .Cast {
+  border: 1px dotted silver;
+  padding: 5px;
+}
+
+.label {
+  color: #daa520;
+  padding: 5px;
+}
+
+.value {
+  color: bisque;
+  padding: 5px;
+}
+
+.btn.btn-link {
+  font-family: Nunito, sans-serif;
+  text-decoration: none;
+  transition: all 1s ease-in-out;
+  box-shadow: 1px 1px 2px #000, 2px 2px 3px #131212;
+}
+
+.btn.btn-link:hover {
+  color: red;
+  font-family: Nunito, sans-serif;
+  text-decoration: none;
+  transition: all 1s ease-in-out;
+  box-shadow: 1px 1px 2px #000, 2px 2px 3px #131212;
+}
+
+.btn {
+  font-family: Nunito, sans-serif;
+  transition: all 1s ease-in-out;
+  box-shadow: 1px 1px 2px #000, 2px 2px 3px #131212;
+}
+
+.btn:hover {
+  transition: all .5s ease-in-out;
+  box-shadow: 1px 1px 2px #000, 2px 2px 3px #000, 3px 3px 4px #00000080;
+}
+
+body {
+  color: bisque;
+  background: linear-gradient(to left, #242323 10%, #6b6a6a 45%, #1a1919 75%);
+}
+
+img {
+  height: 375px;
+  width: 275px;
+  border-radius: 14px;
+  margin-left: 10%;
+  box-shadow: 1px 1px 3px #000, 2px 2px 3px #000;
+}
+
+body {
+  font-family: Dongle, sans-serif;
+}
+
+.card-text {
+  font-family: Dongle, sans-serif;
+  font-size: 14pt;
+}
+
+.card-title.h5 {
+  color: #0084ff;
+  font-family: Dongle, sans-serif;
+  font-size: 26pt;
+}
+
+.MuVies {
+  color: bisque;
+  width: 100vw;
+  background: linear-gradient(to left, #464444 10%, #272727 45%, #1a1919 75%);
+  border-radius: 14px;
+  padding: 7px;
+  font-family: Nunito, sans-serif;
+  box-shadow: inset 1px 1px 2px #000, inset 2px 2px 3px #000, inset 3px 3px 4px #000000ad;
+}
+
+.btn.btn-link {
+  font-family: Nunito, sans-serif;
+  text-decoration: none;
+  transition: all 1s ease-in-out;
+  box-shadow: 1px 1px 2px #000, 2px 2px 3px #131212;
+}
+
+.btn.btn-link:hover {
+  color: red;
+  font-family: Nunito, sans-serif;
+  text-decoration: none;
+  transition: all 1s ease-in-out;
+  box-shadow: 1px 1px 2px #000, 2px 2px 3px #131212;
+}
+
+.btn {
+  font-family: Nunito, sans-serif;
+  transition: all 1s ease-in-out;
+  box-shadow: 1px 1px 2px #000, 2px 2px 3px #131212;
+}
+
+.btn:hover {
+  transition: all .5s ease-in-out;
+  box-shadow: 1px 1px 2px #000, 2px 2px 3px #000, 3px 3px 4px #00000080;
+}
+
+/*# sourceMappingURL=index.43d58262.css.map */

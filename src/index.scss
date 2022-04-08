@@ -1,0 +1,61 @@
+body{
+  font-family: 'Dongle', sans-serif;
+}
+
+.card-text{
+  font-size: 14pt;
+  font-family: 'Dongle', sans-serif;
+}
+
+.card-title.h5{
+  color: rgb(0, 132, 255);
+  font-size: 26pt;
+  font-family: 'Dongle', sans-serif;
+}
+
+.MuVies{
+  font-family: 'Nunito', sans-serif;
+  Color: bisque;
+  background: linear-gradient(to left, rgb(70, 68, 68) 10%, rgb(39, 39, 39) 45%, rgb(26, 25, 25) 75%);
+  width: 100vw;
+  padding: 7px;
+  border-radius: 14px;
+  box-shadow:
+  inset 1px 1px 2px black,
+  inset 2px 2px 3px black,
+  inset 3px 3px 4px rgba(0, 0, 0, 0.678);
+}
+
+.btn.btn-link{
+
+  font-family: 'Nunito', sans-serif;
+  text-decoration: none;
+  box-shadow: 1px 1px 2px rgb(0, 0, 0),
+  2px 2px 3px rgb(19, 18, 18);
+  transition: 1s ease-in-out;
+}
+
+.btn.btn-link:hover{
+  color: red;
+  font-family: 'Nunito', sans-serif;
+  text-decoration: none;
+  box-shadow: 1px 1px 2px rgb(0, 0, 0),
+  2px 2px 3px rgb(19, 18, 18);
+  transition: 1s ease-in-out;
+}
+
+
+.btn{
+  font-family: 'Nunito', sans-serif;  
+  box-shadow: 1px 1px 2px rgb(0, 0, 0),
+  2px 2px 3px rgb(19, 18, 18);
+  transition: 1s ease-in-out;
+}
+.btn:hover{
+  box-shadow: 1px 1px 2px rgb(0, 0, 0),
+              2px 2px 3px rgb(0, 0, 0),
+              3px 3px 4px rgba(0, 0, 0, 0.5);
+              transition: .5s ease-in-out;
+}
+
+
