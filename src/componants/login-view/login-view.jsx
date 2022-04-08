@@ -43,7 +43,7 @@ export function LoginView(props) {
       .then(response =>{
           const data = response.data;
           props.onLoggedIn(data);
-          location.reload()
+  
       })
       .catch(e => {
         alert('User does not Exist Please try again...')
