@@ -4,27 +4,28 @@ import React from 'react';
 import { LoginView } from '../login-view/login-view';
 import { MovieCard } from '../movie-card/movie-card';
 import { MovieView } from '../movie-view/movie-view';
-import {Row, Col, Accordion} from 'react-bootstrap'
+import {Row, Button,Routes, Col, Accordion} from 'react-bootstrap'
+import { BrowserRouter as Router, Route } from "react-router-dom";
+
+
 import './main-view.scss';
 class MainView extends React.Component {
   constructor(){
     super();
     this.state = {
       movies: [],
-      selectedMovie: null,
+      // selectedMovie: null,
       user: null
     };
   }
   componentDidMount(){
-    axios.get('https://muvies-app.herokuapp.com/Movies')
-      .then(response => {
-        this.setState({
-          movies: response.data
-        });
-      })
-      .catch(error => {
-       console.log(error);
-     });
+    let accessToken = localStorage.getItem('token');
+    if (accessToken !== null) {
+      // this.setState({
+      //   user: localStorage.getItem('user')
+      // });
+      this.getMovies(accessToken);
+    }
   }
 
   setSelectedMovie(newSelectedMovie) {
@@ -44,7 +45,7 @@ class MainView extends React.Component {
     this.getMovies(authData.token);
   }
 
-  onLoggedOut() {
+  onLoggedOut(e) {
     localStorage.removeItem('token');
     localStorage.removeItem('user');
     this.setState({
@@ -67,32 +68,38 @@ getMovies(token) {
 }
 
 
-      render() {
-        const { user, movies, selectedMovie } = this.state;
+render() {
+  const { movies, user } = this.state;
 
-        if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />;
+  if (!user) return <Row>
+    <Col>
+      <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
+    </Col>
+  </Row>
+  if (movies.length === 0) return <div className="main-view" />;
 
-
-    if (movies.length === 0) return <div className="main-view" />;
-    return (
+  return (
+    <Router>
+      <Routes>
       <Row className="main-view justify-content-md-center">
-        {selectedMovie
-          ? (
-            <Col md={8}>
-              <MovieView movie={selectedMovie} onBackClick={newSelectedMovie => { this.setSelectedMovie(newSelectedMovie); }} />
-            </Col>
-          )
-          : movies.map(movie => (
-            <Col md={3}>
-              <MovieCard key={movie._id} movie={movie} onMovieClick={newSelectedMovie => { this.setSelectedMovie(newSelectedMovie); }}/>
+        <Route exact path="/" render={() => {
+          return movies.map(m => (
+            <Col md={3} key={m._id}>
+              <MovieCard movie={m} />
             </Col>
           ))
-        }
-      </Row>
-    );
-  }
-}
+        }} />
+        <Route path="/movies/:movieId" render={({ match }) => {
+          return <Col md={8}>
+            <MovieView movie={movies.find(m => m._id === match.params.movieId)} />
+          </Col>
+        }} />
 
-    
+      </Row>
+      </Routes>
+    </Router>
+  );
+}
+}
 
 export default MainView;
