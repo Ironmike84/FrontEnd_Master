@@ -4,36 +4,30 @@ import React from 'react';
 import { LoginView } from '../login-view/login-view';
 import { MovieCard } from '../movie-card/movie-card';
 import { MovieView } from '../movie-view/movie-view';
-import {Row, Button,Routes, Col, Accordion} from 'react-bootstrap'
-import { BrowserRouter as Router, Route } from "react-router-dom";
-
+import MoviesView from '../movies/movies-view'
+import {Row, Button, Col, Button, Accordion} from 'react-bootstrap'
+import { BrowserRouter as Router, Routes, Link, Route } from "react-router-dom";
+import ProfileView from '../Profile-View/profile-view'
+import NavBar from '../Nav-Bar/NavBar'
 
 import './main-view.scss';
+import MoviesView from '../movies/movies-view';
 class MainView extends React.Component {
-  constructor(){
-    super();
+  constructor(props){
+    super(props);
     this.state = {
-      movies: [],
-      // selectedMovie: null,
-      user: null
+        user: null,
+        Token: null,
     };
   }
   componentDidMount(){
     let accessToken = localStorage.getItem('token');
-    if (accessToken !== null) {
+    // if (accessToken !== null) {
       // this.setState({
       //   user: localStorage.getItem('user')
       // });
       this.getMovies(accessToken);
-    }
   }
-
-  setSelectedMovie(newSelectedMovie) {
-    this.setState({
-      selectedMovie: newSelectedMovie
-    });
-  }
-
   onLoggedIn(authData) {
     console.log(authData);
     this.setState({
@@ -43,6 +37,8 @@ class MainView extends React.Component {
     localStorage.setItem('token', authData.token);
     localStorage.setItem('user', authData.user.UserName);
     this.getMovies(authData.token);
+    this.setState({Token: authData.token})
+
   }
 
   onLoggedOut(e) {
@@ -61,6 +57,7 @@ getMovies(token) {
             this.setState({
                 movies: response.data
             });
+
         })
         .catch(function (error) {
             console.log(error);
@@ -68,38 +65,25 @@ getMovies(token) {
 }
 
 
-render() {
-  const { movies, user } = this.state;
-
-  if (!user) return <Row>
-    <Col>
-      <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
-    </Col>
-  </Row>
-  if (movies.length === 0) return <div className="main-view" />;
-
-  return (
-    <Router>
+      render() {
+        const { user, movies, Token, selectedMovie } = this.state;
+      
+        if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />;
+        
+        return (
+      <>
+      <Button className="btn btn-danger LogOut" onClick={() => { this.onLoggedOut() }}>Logout</Button>
+      <NavBar/>
+      <h5>Welcome {user}!</h5> 
       <Routes>
-      <Row className="main-view justify-content-md-center">
-        <Route exact path="/" render={() => {
-          return movies.map(m => (
-            <Col md={3} key={m._id}>
-              <MovieCard movie={m} />
-            </Col>
-          ))
-        }} />
-        <Route path="/movies/:movieId" render={({ match }) => {
-          return <Col md={8}>
-            <MovieView movie={movies.find(m => m._id === match.params.movieId)} />
-          </Col>
-        }} />
+        <Route path={"/"} element={<ProfileView user={user}/>}></Route>
+        <Route path={"/Movies"} element={<MoviesView token={Token} user={user} />}></Route>
+      </Routes>  
+      </>
+    );
+  }
+}
 
-      </Row>
-      </Routes>
-    </Router>
-  );
-}
-}
+    
 
 export default MainView;

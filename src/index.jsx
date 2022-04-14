@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 import { LoginView } from './componants/login-view/login-view';
 import MainView from './componants/main-view/main-view';
 import Container from 'react-bootstrap/Container';
-
+import { BrowserRouter as Router } from 'react-router-dom'
 // Import statement to indicate that you need to bundle `./index.scss`
 import './index.scss';
 
@@ -12,10 +12,10 @@ import './index.scss';
 class MyFlixApplication extends React.Component {
   render() {
     return (
-      <>
+      <Router>
         <div className='MuVies'>MuVies-App</div>
         <MainView />
-      </>
+      </Router>
     );
   }
 }

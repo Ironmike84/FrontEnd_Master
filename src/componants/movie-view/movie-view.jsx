@@ -1,7 +1,7 @@
 //MOVIE VIEW 
 import React from 'react';
 import './movie-view.scss';
-export class MovieView extends React.Component {
+class MovieView extends React.Component {
 
   render() {
     const { movie, onBackClick } = this.props;
@@ -19,12 +19,12 @@ export class MovieView extends React.Component {
           <span className="label">Description: </span>
           <span className="value">{movie.Description}</span>
         </div>
-        <div className='Categorical'>
+      
         <div className='details'>Details:</div>
         <div className="movie-genre">
           <span className="label">Genre: </span>
           <span className="value">{movie.Genre}</span>
-        </div>
+          </div>
         <div className="movie-rating">
           <span className="label">Rating: </span>
           <span className="value">{movie.Rating}</span>
@@ -33,9 +33,9 @@ export class MovieView extends React.Component {
           <span className="label">Director: </span>
           <span className="value">{movie.Director}</span>
         </div>
-        </div>
+        
 
-        <div className='Actors'>
+   
           <div className='Actors-Title'>Actors:</div>
         <div className="Star-Actor">
           <span className="label">StarActor: </span>
@@ -49,11 +49,13 @@ export class MovieView extends React.Component {
           <span className="label">Cast: </span>
           <span className="value">{movie.Cast}</span>
         </div>
-        </div>
-        <button class='btn btn-link'  onClick={() => { onBackClick(null); }}>Back</button>
+   
+        <button class='btn btn-link Movie-Btn'  onClick={() => { onBackClick(null); }}>Back</button>
   
       </div>
       
     );
   }
 }
+
+export default MovieView;
