@@ -4,16 +4,14 @@
     border: 1px solid rgb(180, 0, 0);
     width: 150px;
     height: fit-content;
-    border-radius: 14px;
+    border-radius: 5px;
     padding: 7px;
     background: linear-gradient(to left, rgb(29, 29, 29) 10%, rgb(26, 25, 25) 45%, rgb(10, 10, 10) 75%);
     margin-left: 50px;
-    box-shadow: 1px 1px 3px black,
-                2px 2px 3px black,
-                3px 3px 4px rgba(15, 15, 15, 0.808);
+    
 }
 
-input {
+input  {
     width: 150px;
     font-family: 'Dongle', sans-serif;
     font-size: 14pt;
@@ -50,14 +48,22 @@ form{
     flex-direction: column;
     justify-content: space-between;
     background: linear-gradient(to left, rgb(29, 29, 29) 10%, rgb(26, 25, 25) 45%, rgb(10, 10, 10) 75%);
-    border: 1px outset rgb(190, 190, 190);
+    border: 1px outset rgba(46, 45, 45, 0.151);
     border-radius: 15px;
     height: 300px;
     width: 250px;
-    box-shadow: 1px 1px 3px black,
-                2px 2px 3px black,
-                3px 3px 6px black;
+  box-shadow: rgba(0, 0, 0, 0.27) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.25) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.2) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.26) 0px 2px 1px, rgba(0, 0, 0, 0.29) 0px 4px 2px, rgba(0, 0, 0, 0.29) 0px 8px 4px, rgba(0, 0, 0, 0.29) 0px 16px 8px, rgba(0, 0, 0, 0.25) 0px 32px 16px;
 }
 .log-out{
         margin: 10px;
 }
+
+
+.form-control:active,
+.form-control:focus,
+.form-control:focus:active {
+  background-color: #1c1d1d!important;
+  border-color: #96d3ec;
+  color: white;
+}
+
