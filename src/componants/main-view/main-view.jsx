@@ -1,17 +1,15 @@
 //MAIN View
 import axios from 'axios';
 import React from 'react';
-import { LoginView } from '../login-view/login-view';
-import { MovieCard } from '../movie-card/movie-card';
-import { MovieView } from '../movie-view/movie-view';
-import MoviesView from '../movies/movies-view'
+import MovieView from '../movie-view/movie-view';
 import {Row, Button, Col, Button, Accordion} from 'react-bootstrap'
 import { BrowserRouter as Router, Routes, Link, Route } from "react-router-dom";
 import ProfileView from '../Profile-View/profile-view'
+import { LoginView } from '../login-view/login-view';
 import NavBar from '../Nav-Bar/NavBar'
-
 import './main-view.scss';
 import MoviesView from '../movies/movies-view';
+import DirectorView from '../director-view/director-view';
 class MainView extends React.Component {
   constructor(props){
     super(props);
@@ -20,14 +18,14 @@ class MainView extends React.Component {
         Token: null,
     };
   }
+
+  //----------------------------------------------// GET Token
   componentDidMount(){
     let accessToken = localStorage.getItem('token');
-    // if (accessToken !== null) {
-      // this.setState({
-      //   user: localStorage.getItem('user')
-      // });
+  
       this.getMovies(accessToken);
   }
+
   onLoggedIn(authData) {
     console.log(authData);
     this.setState({
@@ -38,7 +36,6 @@ class MainView extends React.Component {
     localStorage.setItem('user', authData.user.UserName);
     this.getMovies(authData.token);
     this.setState({Token: authData.token})
-
   }
 
   onLoggedOut(e) {
@@ -48,7 +45,7 @@ class MainView extends React.Component {
         user: null
     });
 }
-
+//--------------------------------------------------------------GET T
 getMovies(token) {
     axios.get(`https://muvies-app.herokuapp.com/Movies`, {
         headers: { Authorization: `Bearer ${token}`}
@@ -57,7 +54,6 @@ getMovies(token) {
             this.setState({
                 movies: response.data
             });
-
         })
         .catch(function (error) {
             console.log(error);
@@ -78,6 +74,12 @@ getMovies(token) {
       <Routes>
         <Route path={"/"} element={<ProfileView user={user}/>}></Route>
         <Route path={"/Movies"} element={<MoviesView token={Token} user={user} />}></Route>
+        <Route path={"/Directors"} element={<DirectorView  user={user} token={Token}/>}></Route>
+        <Route path="/Directors/:name" render={({ match }) => {
+            return <Col md={8}>
+              <DirectorView match={match}/>
+            </Col>
+          }} />
       </Routes>  
       </>
     );
