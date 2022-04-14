@@ -1,7 +1,6 @@
 //MOVIE VIEW 
 import React from 'react';
 import './movie-view.scss';
-import { Link } from 'react-router-dom'
 class MovieView extends React.Component {
 
   render() {
@@ -32,7 +31,6 @@ class MovieView extends React.Component {
         </div>
         <div className="movie-director">
           <span className="label">Director: </span>
-          <Link to={`/Director/${movie.Director}`}>Director</Link>
           <span className="value">{movie.Director}</span>
         </div>
         

@@ -1,7 +1,6 @@
 //MAIN View
 import axios from 'axios';
 import React from 'react';
-import MovieView from '../movie-view/movie-view';
 import {Row, Button, Col, Button, Accordion} from 'react-bootstrap'
 import { BrowserRouter as Router, Routes, Link, Route } from "react-router-dom";
 import ProfileView from '../Profile-View/profile-view'
@@ -10,19 +9,20 @@ import NavBar from '../Nav-Bar/NavBar'
 import './main-view.scss';
 import MoviesView from '../movies/movies-view';
 import DirectorView from '../director-view/director-view';
+
 class MainView extends React.Component {
   constructor(props){
     super(props);
     this.state = {
         user: null,
         Token: null,
+        userInfo: null
     };
   }
 
   //----------------------------------------------// GET Token
   componentDidMount(){
     let accessToken = localStorage.getItem('token');
-  
       this.getMovies(accessToken);
   }
 
@@ -31,6 +31,9 @@ class MainView extends React.Component {
     this.setState({
       user: authData.user.UserName
     });
+    this.setState({
+      userInfo: authData.user
+    })
   
     localStorage.setItem('token', authData.token);
     localStorage.setItem('user', authData.user.UserName);
@@ -49,7 +52,7 @@ class MainView extends React.Component {
 getMovies(token) {
     axios.get(`https://muvies-app.herokuapp.com/Movies`, {
         headers: { Authorization: `Bearer ${token}`}
-    })
+        })
         .then(response => {
             this.setState({
                 movies: response.data
@@ -58,28 +61,21 @@ getMovies(token) {
         .catch(function (error) {
             console.log(error);
         });
-}
-
-
+      }
       render() {
-        const { user, movies, Token, selectedMovie } = this.state;
+      const { user, Token, userInfo} = this.state;
       
-        if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />;
-        
-        return (
+      if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)}/>;
+      
+      return (
       <>
       <Button className="btn btn-danger LogOut" onClick={() => { this.onLoggedOut() }}>Logout</Button>
       <NavBar/>
       <h5>Welcome {user}!</h5> 
       <Routes>
-        <Route path={"/"} element={<ProfileView user={user}/>}></Route>
-        <Route path={"/Movies"} element={<MoviesView token={Token} user={user} />}></Route>
+        <Route path={"/"} element={<ProfileView user={user} token={Token} userInfo={userInfo}/>}></Route>
+        <Route path={"/Movies"} element={<MoviesView user={user} token={Token} />}></Route>
         <Route path={"/Directors"} element={<DirectorView  user={user} token={Token}/>}></Route>
-        <Route path="/Directors/:name" render={({ match }) => {
-            return <Col md={8}>
-              <DirectorView match={match}/>
-            </Col>
-          }} />
       </Routes>  
       </>
     );
