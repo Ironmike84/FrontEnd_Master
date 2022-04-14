@@ -8,7 +8,7 @@ function NavBar() {
     <div className='NavBar'>
       <Link to={'/'}><Button className='btn btn-link' variant='dark'>Profile</Button></Link>
       <Link to={'/Movies'}><Button className='btn btn-link' variant='dark'>Movies</Button></Link>
-      <Button className='btn btn-link' variant='dark'>Directors</Button>
+      <Link to={'/Directors'}><Button className='btn btn-link' variant='dark'>Directors</Button></Link>
       <Button className='btn btn-link' variant='dark'>Favorites</Button>
     </div>
   )
